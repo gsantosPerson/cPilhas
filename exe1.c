@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 typedef struct Pilha{
     int *conteudo;
@@ -56,38 +57,35 @@ void imprimir(Pilha *p){
     }
 }
 
+void pihaA(){
+    int valores[] = {1,2,4,5,10}, i;
+    Pilha *p = criar(5);
+
+    printf("Sequência A\n");
+
+    for(i = 0; i < 5; i++){
+        printf("Valor: ");
+        scanf("%d", &valores[i]);
+        empilhar(p, valores[i]);
+    }
+
+    while(!isEmpty(p)){
+        printf("%d ", desempilhar(p));
+    }
+
+    free(p);
+    free(p->valor);
+
+    }
+
+
+void pilhaA(){
+
+}
 int main(){
+    setlocale(LC_ALL, "pt-br");
+    pilhaA();
 
-    int valorEntrada, i, tamEntrada;
-
-    Pilha *p = criar(4);
-
-    empilhar(p, 1);
-    empilhar(p, 2);
-    empilhar(p, 5);
-    empilhar(p, 10);
-
-    Pilha *p2 = criar(5);
-
-    empilhar(p2, 7);
-    empilhar(p2, 12);
-    empilhar(p2, 15);
-    empilhar(p2, 18);
-    empilhar(p2, 22);
-
-    printf("\nPilha (a) original: ");
-    imprimir(p);
-
-    printf("\nPilha (b) original: ");
-    imprimir(p2);
-
-    desempilhar(p);
-    printf("\nPilha (a) depois do pop: ");
-    imprimir(p);
-
-    desempilhar(p2);
-    printf("\nPilha (b) depois do pop: ");
-    imprimir(p2);
 
 return 0;
 }
