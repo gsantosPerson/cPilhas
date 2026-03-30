@@ -74,15 +74,19 @@ int main(){
     empilhar(p2, 15);
     empilhar(p2, 18);
     empilhar(p2, 22);
-    /*for(i = 0; i < tamEntrada; i++){
-        printf("Valor: ");
-        scanf("%d", &valorEntrada);
-        empilhar(p, valorEntrada);
-    }*/
 
-    //desempilhar(p);
+    printf("\nPilha (a) original: ");
     imprimir(p);
-    puts("");
+
+    printf("\nPilha (b) original: ");
+    imprimir(p2);
+
+    desempilhar(p);
+    printf("\nPilha (a) depois do pop: ");
+    imprimir(p);
+
+    desempilhar(p2);
+    printf("\nPilha (b) depois do pop: ");
     imprimir(p2);
 
 return 0;
