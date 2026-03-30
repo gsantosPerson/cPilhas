@@ -46,16 +46,6 @@ int desempilhar(Pilha *p){
     return valor;
 }
 
-void imprimir(Pilha *p){
-    if(isEmpty(p)){
-        printf("\nPilha vazia\n");
-        return;
-    }
-
-    for(int i = p->topo; i >= 0; i--){
-        printf("%d ", p->conteudo[i]);
-    }
-}
 
 void mostrar(int a[], char *nomePilha){
     Pilha *p = criar(5);
@@ -66,7 +56,7 @@ void mostrar(int a[], char *nomePilha){
         empilhar(p, a[i]);
     }
 
-    while(!isEmpty(p)){
+    for(int i = p->topo; i >= 0; i--){
         printf("%d ", desempilhar(p));
     }
 
