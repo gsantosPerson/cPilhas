@@ -57,16 +57,13 @@ void imprimir(Pilha *p){
     }
 }
 
-void pihaA(){
-    int valores[] = {1,2,4,5,10}, i;
+void mostrar(int a[], char *nomePilha){
     Pilha *p = criar(5);
 
-    printf("Sequência A\n");
+    printf("\n%s: ", nomePilha);
 
-    for(i = 0; i < 5; i++){
-        printf("Valor: ");
-        scanf("%d", &valores[i]);
-        empilhar(p, valores[i]);
+    for(int i = 0; i < 5; i++){
+        empilhar(p, a[i]);
     }
 
     while(!isEmpty(p)){
@@ -74,17 +71,18 @@ void pihaA(){
     }
 
     free(p);
-    free(p->valor);
+    free(p->conteudo);
 
     }
 
-
-void pilhaA(){
-
-}
 int main(){
     setlocale(LC_ALL, "pt-br");
-    pilhaA();
+
+    int a[] = {1,2,4,5,10};
+    mostrar(a, "Pilha A");
+
+    int b[] = {7, 12, 15, 18, 22};
+    mostrar(b, "Pilha B");
 
 
 return 0;
